@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 import Sidebar from './Sidebar'
-import Header from './Header'
 
-export default function Layout({ children }) {
+export default function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -31,7 +30,6 @@ export default function Layout({ children }) {
           <div style={{ width: '2.5rem' }} />
         </div>
         
-        <Header />
         <main style={{ padding: '1rem' }}>
           <Outlet />
         </main>

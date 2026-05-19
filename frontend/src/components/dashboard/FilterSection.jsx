@@ -33,7 +33,7 @@ export default function FilterSection({ onApply }) {
         <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#F8FAFC' }}>Filters</h3>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '1rem', marginBottom: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
         {Object.entries(filterOptions).map(([key, options]) => (
           <div key={key}>
             <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: '500', color: '#94A3B8', marginBottom: '0.5rem' }}>
@@ -63,8 +63,8 @@ export default function FilterSection({ onApply }) {
         ))}
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem' }}>
-        <div style={{ flex: 1, position: 'relative' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        <div style={{ flex: '1 1 280px', minWidth: 0, position: 'relative' }}>
           <Search style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', width: '1.25rem', height: '1.25rem', color: '#94A3B8' }} />
           <input
             type="text"
@@ -86,7 +86,10 @@ export default function FilterSection({ onApply }) {
         <button
           onClick={handleApply}
           style={{
-            padding: '0.75rem 2rem',
+            flex: '0 1 200px',
+            width: '100%',
+            maxWidth: '220px',
+            padding: '0.75rem 1.25rem',
             borderRadius: '0.75rem',
             backgroundColor: '#3B82F6',
             color: 'white',

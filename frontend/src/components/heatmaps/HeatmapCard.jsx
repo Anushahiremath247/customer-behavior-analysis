@@ -11,8 +11,8 @@ export default function HeatmapCard({ title, data, labels }) {
       padding: '1.5rem'
     }}>
       <h3 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#F8FAFC', marginBottom: '1rem' }}>{title}</h3>
-      <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+      <div style={{ overflowX: 'auto', minWidth: 0 }}>
+        <table style={{ width: '100%', minWidth: '320px', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
               <th style={{ padding: '0.5rem', textAlign: 'left', color: '#94A3B8', fontSize: '0.875rem' }}></th>
