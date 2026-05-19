@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python environment
+venv/
+.env
+
+# SQLite database
+*.db
+analytics.db
+
+# Node modules and build output
+frontend/node_modules/
+frontend/dist/
+
+# Vite cache
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode/
