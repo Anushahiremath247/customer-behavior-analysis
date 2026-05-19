@@ -1,8 +1,10 @@
+import os
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = "sqlite:///./analytics.db"
+    default_db = "sqlite:////tmp/analytics.db" if os.getenv("VERCEL") == "1" else os.getenv("DATABASE_URL", "sqlite:///./analytics.db")
+    DATABASE_URL: str = default_db
     FRONTEND_URL: str = "http://localhost:5173"
 
     class Config:
